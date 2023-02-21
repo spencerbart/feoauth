@@ -1,0 +1,12 @@
+[package]
+name = "konganon"
+version = "0.1.0"
+authors = ["Spencer Bartholomew <hey@spencerbartholomew.com>]
+description = "Complete auth library for managing users and issuing JWT tokens. Embedable into any application."
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+jsonwebtoken = "8.2.0"
