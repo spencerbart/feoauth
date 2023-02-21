@@ -1,5 +1,5 @@
 [package]
-name = "konganon"
+name = "feoauth"
 version = "0.1.0"
 authors = ["Spencer Bartholomew <hey@spencerbartholomew.com>]
 description = "Complete auth library for managing users and issuing JWT tokens. Embedable into any application."
