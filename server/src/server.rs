@@ -50,8 +50,7 @@ pub async fn run() {
     // initializes cors
     let cors = CorsLayer::new()
         .allow_methods([Method::GET, Method::POST, Method::DELETE])
-        .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE])
-        .allow_origin(config.client_url.parse::<HeaderValue>().unwrap());
+        .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE]);
 
     // creates a socket address to expose the api
     let addr = SocketAddr::from(([0, 0, 0, 0], config.port));

@@ -2,8 +2,6 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct Config {
-    pub client_url: String,
-
     pub database_url: String,
 
     pub jwt_secret: String,
