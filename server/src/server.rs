@@ -4,7 +4,7 @@ use axum::{
     error_handling::HandleErrorLayer,
     http::{
         header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE},
-        HeaderValue, Method, StatusCode,
+        Method, StatusCode,
     },
     BoxError, Router,
 };

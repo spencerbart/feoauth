@@ -6,5 +6,7 @@ mod authentication;
 mod management;
 
 pub fn router(context: ApiContext) -> Router {
-    Router::new().with_state(context)
+    Router::new()
+        .merge(management::router())
+        .with_state(context)
 }
