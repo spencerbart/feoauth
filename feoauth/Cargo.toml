@@ -1,7 +1,7 @@
 [package]
 name = "feoauth"
 version = "0.1.0"
-authors = ["Spencer Bartholomew <hey@spencerbartholomew.com>]
+authors = ["Spencer Bartholomew <hey@spencerbartholomew.com>"]
 description = "Complete auth library for managing users and issuing JWT tokens. Embedable into any application."
 homepage = "https://github.com/spencerbart/konganon"
 repository = "https://github.com/spencerbart/konganon"
@@ -14,4 +14,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.69"
+argon2 = "0.4.1"
 jsonwebtoken = "8.2.0"
+rand_core = { version = "0.6.4", features = ["std"] }
