@@ -36,6 +36,10 @@ pub async fn run() {
         .await
         .expect("can't connect to database");
 
+    // This embeds database migrations in the application binary so we can ensure the database
+    // is migrated correctly on startup
+    sqlx::migrate!().run(&db).await.expect("can't run migrations");
+
     // loads tracing filter from env variable
     let filter = EnvFilter::builder()
         .with_default_directive(LevelFilter::ERROR.into())
