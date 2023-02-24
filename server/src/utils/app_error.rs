@@ -8,6 +8,7 @@ pub enum AppError {
     ReqwestError(reqwest::Error),
     Anyhow(anyhow::Error),
     Validate(validator::ValidationErrors),
+    BadRequest(String),
 }
 
 impl IntoResponse for AppError {
@@ -28,6 +29,7 @@ impl IntoResponse for AppError {
                 Json(format!("Something went wrong: {}", e)),
             )
                 .into_response(),
+            AppError::BadRequest(e) => (StatusCode::BAD_REQUEST, Json(e)).into_response(),
         }
     }
 }

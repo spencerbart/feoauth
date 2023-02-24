@@ -1,13 +1,24 @@
-use axum::{middleware, routing::get, Router};
+use axum::{
+    middleware,
+    routing::{get, post},
+    Router,
+};
 
 use crate::{server::ApiContext, utils::middleware::is_user};
 
+mod create_user;
+mod get_audit_logs;
 mod get_users;
 
 pub fn router() -> Router<ApiContext> {
-    let router = Router::new()
-        .route("/users", get(get_users::get_users))
-        .route_layer(middleware::from_fn(is_user));
-
-    Router::new().nest("/stripe", router)
+    Router::new().nest(
+        "/management",
+        Router::new()
+            .route("/audit-logs", get(get_audit_logs::get_audit_logs))
+            .route(
+                "/users",
+                post(create_user::create_user).get(get_users::get_users),
+            )
+            .route_layer(middleware::from_fn(is_user)),
+    )
 }

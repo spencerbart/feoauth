@@ -9,16 +9,15 @@ use serde::Deserialize;
 use crate::{server::ApiContext, utils::app_error::AppError};
 
 #[derive(Deserialize)]
-pub struct GetUsersParams {
+pub struct GetAuditLogsParams {
     pub page: Option<i64>,
     pub per_page: Option<i64>,
 }
 
-pub async fn get_users(
+pub async fn get_audit_logs(
     State(context): State<ApiContext>,
-    Query(query): Query<GetUsersParams>,
+    Query(query): Query<GetAuditLogsParams>,
     Extension(user_id): Extension<String>,
 ) -> Result<Response, AppError> {
-    println!("user_id: {}", user_id);
-    Ok((StatusCode::OK, "get users").into_response())
+    Ok((StatusCode::OK, "get audit logs").into_response())
 }

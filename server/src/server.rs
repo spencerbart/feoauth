@@ -38,7 +38,10 @@ pub async fn run() {
 
     // This embeds database migrations in the application binary so we can ensure the database
     // is migrated correctly on startup
-    sqlx::migrate!().run(&db).await.expect("can't run migrations");
+    sqlx::migrate!()
+        .run(&db)
+        .await
+        .expect("can't run migrations");
 
     // loads tracing filter from env variable
     let filter = EnvFilter::builder()
@@ -66,7 +69,7 @@ pub async fn run() {
     };
 
     // creates the api router and applies the middlewares
-    let api_router = Router::new().nest("/api", routes::router(context)).layer(
+    let api_router = Router::new().nest("/v1", routes::router(context)).layer(
         ServiceBuilder::new()
             .layer(CompressionLayer::new())
             .layer(TraceLayer::new_for_http())
@@ -77,6 +80,7 @@ pub async fn run() {
             .timeout(std::time::Duration::from_secs(30)),
     );
 
+    println!("All configured, starting server at {}", addr);
     // starts the server
     axum::Server::bind(&addr)
         .serve(api_router.into_make_service())
