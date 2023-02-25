@@ -1,0 +1,9 @@
+name: CI
+on: [push, pull_request]
+branches: [main]
+jobs:
+  cargo-deny:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: EmbarkStudios/cargo-deny-action@v1√
