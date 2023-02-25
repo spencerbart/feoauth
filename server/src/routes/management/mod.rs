@@ -4,11 +4,12 @@ use axum::{
     Router,
 };
 
-use crate::{server::ApiContext, utils::middleware::is_user};
+use crate::{server::ApiContext, utils::middleware::is_admin};
 
 mod create_user;
 mod get_audit_logs;
 mod get_users;
+mod invite_user;
 
 pub fn router() -> Router<ApiContext> {
     Router::new().nest(
@@ -19,6 +20,7 @@ pub fn router() -> Router<ApiContext> {
                 "/users",
                 post(create_user::create_user).get(get_users::get_users),
             )
-            .route_layer(middleware::from_fn(is_user)),
+            .route("/invite", post(invite_user::invite_user))
+            .route_layer(middleware::from_fn(is_admin)),
     )
 }
