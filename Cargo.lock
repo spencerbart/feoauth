@@ -428,6 +428,30 @@ name = "feoauth"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "axum",
+ "dotenvy",
+ "envy",
+ "feoauth-core",
+ "http",
+ "jsonwebtoken",
+ "rand",
+ "reqwest",
+ "serde",
+ "sqlx",
+ "tokio",
+ "tower",
+ "tower-http 0.4.0",
+ "tracing",
+ "tracing-subscriber",
+ "uuid",
+ "validator",
+]
+
+[[package]]
+name = "feoauth-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
  "argon2",
  "jsonwebtoken",
  "rand_core",
@@ -1596,30 +1620,6 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
-]
-
-[[package]]
-name = "server"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "dotenvy",
- "envy",
- "feoauth",
- "http",
- "jsonwebtoken",
- "rand",
- "reqwest",
- "serde",
- "sqlx",
- "tokio",
- "tower",
- "tower-http 0.4.0",
- "tracing",
- "tracing-subscriber",
- "uuid",
- "validator",
 ]
 
 [[package]]

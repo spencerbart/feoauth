@@ -1,0 +1,20 @@
+[package]
+name = "feoauth-core"
+version = "0.1.0"
+authors = ["Spencer Bartholomew <hey@spencerbartholomew.com>"]
+description = "Complete auth library for managing users and issuing JWT tokens. Embedable into any application."
+homepage = "https://github.com/spencerbart/feoauth"
+repository = "https://github.com/spencerbart/feoauth"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+keywords = ["auth", "jwt", "users", "authentication", "authorization", "identity access management"]
+categories = ["authentication"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.69"
+argon2 = "0.4.1"
+jsonwebtoken = "8.2.0"
+rand_core = { version = "0.6.4", features = ["std"] }

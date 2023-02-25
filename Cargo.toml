@@ -2,5 +2,5 @@
 
 members = [
     "feoauth",
-    "server",
+    "feoauth-core",
 ]
