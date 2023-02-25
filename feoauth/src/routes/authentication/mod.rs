@@ -25,6 +25,7 @@ pub fn router() -> Router<ApiContext> {
                         post(callback::external_provider_callback)
                             .get(callback::external_provider_callback),
                     )
+                    // .route("/magiclink")
                     .route("/signup", post(signup::signup))
                     .route("/token", post(token::token)),
             )
