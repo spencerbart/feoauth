@@ -31,7 +31,7 @@ pub async fn run() {
 
     // creates a postgres connection pool
     let db = PgPoolOptions::new()
-        .max_connections(config.max_connections)
+        .max_connections(config.max_db_connections)
         .connect(&config.database_url)
         .await
         .expect("can't connect to database");

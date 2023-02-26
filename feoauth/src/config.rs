@@ -6,7 +6,7 @@ pub struct Config {
 
     pub jwt_secret: String,
 
-    pub max_connections: u32,
+    pub max_db_connections: u32,
 
     pub port: u16,
 }
