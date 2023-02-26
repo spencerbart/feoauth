@@ -14,7 +14,7 @@ Our goal is to create an open-source Auth0 alternative. This project was born ou
 
 Our path to monetization is similar to Meilisearch, Supabase, and others. We plan on offering the product for free but offer a paid hosting solution for ease of use.
 
-We believe in the power of open source. It allows its users to create the features that they need, with the ease of use of a proprietary solution but can be taken in-house once their project hits major scale. We want Feo Auth to be a piece of software that companies are happy to adopt and take in-house and was one of the reasons why we chose Rust. Our goal is to make Feo Auth extremely high performant for enterprise-level scale.
+We believe in the power of open source. It allows its users to create the features that they need, with the ease of use of a proprietary solution but can be taken in-house once their project hits major scale.
 
 # Setup
 
