@@ -15,7 +15,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.69"
-axum = "0.6.8"
+axum = "0.6.9"
 dotenvy = "0.15.6"
 envy = "0.4.2"
 http = "0.2.9"
