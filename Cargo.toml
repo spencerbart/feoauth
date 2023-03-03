@@ -3,4 +3,5 @@
 members = [
     "feoauth",
     "feoauth-core",
+    "feoauth-wasm",
 ]
