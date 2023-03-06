@@ -1,6 +1,9 @@
 use dotenvy::dotenv;
 
-use feoauth_core::server;
+mod config;
+mod routes;
+mod server;
+mod utils;
 
 #[tokio::main]
 async fn main() {

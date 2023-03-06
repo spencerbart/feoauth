@@ -804,9 +804,25 @@ dependencies = [
 name = "feoauth-wasm"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
+ "aws-config",
+ "aws-sdk-dynamodb",
+ "axum",
  "dotenvy",
- "feoauth-core",
+ "envy",
+ "http",
+ "jsonwebtoken",
+ "rand",
+ "reqwest",
+ "serde",
+ "serde_json",
  "tokio",
+ "tower",
+ "tower-http",
+ "tracing",
+ "tracing-subscriber",
+ "uuid",
+ "validator",
 ]
 
 [[package]]
