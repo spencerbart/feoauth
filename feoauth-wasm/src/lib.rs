@@ -20,6 +20,14 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     // Optionally, get more helpful error messages written to the console in the case of a panic.
     utils::set_panic_hook();
 
+    let cors = Cors::new()
+        .with_allowed_headers(vec!["Content-Type", "Authorization", "Accept"])
+        .with_origins(vec![
+            // "http://127.0.0.1:8787",
+            "*",
+        ])
+        .with_methods(vec![Method::Get, Method::Post, Method::Options]);
+
     // Optionally, use the Router to handle matching endpoints, use ":name" placeholders, or "*name"
     // catch-alls to match on specific patterns. Alternatively, use `Router::with_data(D)` to
     // provide arbitrary data that will be accessible in each route via the `ctx.data()` method.
@@ -51,5 +59,6 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
             Response::ok(version)
         })
         .run(req, env)
-        .await
+        .await?
+        .with_cors(&cors)
 }
