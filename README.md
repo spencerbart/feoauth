@@ -6,7 +6,7 @@ Feo Auth is an open-source Auth0 alternative written in Rust.
 
 # Roadmap
 
-**This project is not ready yet but we will update this readme when it is ready.**
+**⚠️This project is a work in progress⚠️**
 
 ## Our goal
 
