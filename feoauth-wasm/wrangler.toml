@@ -1,9 +1,6 @@
-name = "feoauth-wasm" # todo
+name = "feoauth" # todo
 main = "build/worker/shim.mjs"
-compatibility_date = "2022-01-20"
-
-[vars]
-WORKERS_RS_VERSION = "0.0.11"
+compatibility_date = "2023-02-05"
 
 [build]
-command = "cargo install -q worker-build --version 0.0.9 && worker-build --release"
+command = "cargo install worker-build && worker-build --release"

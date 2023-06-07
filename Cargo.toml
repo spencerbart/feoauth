@@ -2,6 +2,6 @@
 
 members = [
     "feoauth-server",
-    "feoauth-core",
+    "feoauth",
     "feoauth-wasm",
 ]
